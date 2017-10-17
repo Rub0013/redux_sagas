@@ -7,10 +7,11 @@ const tasks = (state = [], action) => {
                 ...state,
                 {
                     id: action.id,
-                    text: action.text,
-                    completed: false
+                    text: action.text
                 }
             ];
+        case DELETE_TASK:
+            return state.filter(task => task.id !== action.id);
         default:
             return state
     }

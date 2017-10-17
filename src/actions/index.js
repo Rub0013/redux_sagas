@@ -1,6 +1,5 @@
 import { ADD_TASK, DELETE_TASK } from './types'
 
-
 let nextTodoId = 0;
 export const addTask = text => {
     return {
@@ -10,7 +9,8 @@ export const addTask = text => {
     }
 };
 
-export function deleteTask(data) {
-    return { type: DELETE_TASK, data }
-}
+export const deleteTask = (id) => ({
+    type: DELETE_TASK,
+    id
+});
 
